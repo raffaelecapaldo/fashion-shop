@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Texture;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class TexturesSeeder extends Seeder
 {
@@ -16,10 +17,10 @@ class TexturesSeeder extends Seeder
     public function run()
     {
         $textures = config('dataseeder.textures');
-        foreach ($textures as $key => $texture) {
+        foreach ($textures as $texture) {
             $newTexture = new Texture();
-            $newTexture->name = $texture[$key];
-            $newTexture->slug = str_replace(' ', '-', $texture[$key]);
+            $newTexture->name = $texture;
+            $newTexture->slug = Str::slug($newTexture->name, '-');
             $newTexture->save();
         }
     }
