@@ -17,12 +17,12 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        $brands = config('dataSeeder.brands');
+        $brands = config('dataseeder.brands');
         foreach ($brands as $brand) {
             $new = new Brand();
-            $new->name = $brand['name'];
-            $new->slug = Str::slug($brand['name'], '-');
-            $new->logo = $brand['logo'];
+            $new->name = $brand;
+            $new->slug = Str::slug($brand, '-');
+            $new->logo = "";
             $new->save();
         }
     }
