@@ -6,6 +6,9 @@
 <div class="table-responsive">
 <table class="table">
     <thead>
+        <tr>
+            <th scope="col" colspan="5" class="fs-3 text-center">Lista delle nostre categorie</th>
+        </tr>
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Nome</th>
