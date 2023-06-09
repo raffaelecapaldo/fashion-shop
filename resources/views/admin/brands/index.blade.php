@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin.general')
 
 @section('content')
     <h1>I nostri brands</h1>
