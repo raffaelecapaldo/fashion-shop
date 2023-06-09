@@ -95,10 +95,15 @@ class BrandController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Brand  $brand
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Brand $brand)
     {
-        //
+        if ($brand->logo) {
+            $datogliere = "http://127.0.0.1:8000/storage/";
+            $imagetoremove = str_replace($datogliere, '', $brand->logo);
+            Storage::delete($imagetoremove);
+        }
+        $brand->delete();
+        return redirect()->route('admin.brands.index')->with('message', "$brand->name deleted successfully.");
     }
 }
