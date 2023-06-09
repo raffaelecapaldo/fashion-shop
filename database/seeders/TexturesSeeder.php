@@ -15,7 +15,7 @@ class TexturesSeeder extends Seeder
      */
     public function run()
     {
-        $textures = config('dataSeeder.textures');
+        $textures = config('dataseeder.textures');
         foreach ($textures as $key => $texture) {
             $newTexture = new Texture();
             $newTexture->name = $texture[$key];
