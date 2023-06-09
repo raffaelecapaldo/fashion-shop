@@ -6,6 +6,9 @@
 <div class="table-responsive">
 <table class="table">
     <thead>
+        <tr>
+            <th scope="col" colspan="5" class="fs-3 text-center">Lista dei nostri prodotti</th>
+        </tr>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Product name</th>
