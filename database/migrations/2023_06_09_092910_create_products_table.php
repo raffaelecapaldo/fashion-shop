@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('cover_image')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedDouble(6, 2);
+            $table->unsignedDouble('price', 6,2);
             $table->foreignId('brand_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('texture_id')->nullable()->constrained()->onDelete('set null');
