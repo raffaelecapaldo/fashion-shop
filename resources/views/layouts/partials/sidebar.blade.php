@@ -6,6 +6,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li><a href="{{route('admin.products.index')}}">Home</a></li>
+                <li><a href="{{route('admin.brands.index')}}">Brands</a></li>
 
                 <li><form class="d-inline" method="POST" action="{{route('logout')}}">
                     @csrf
