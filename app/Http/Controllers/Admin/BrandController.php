@@ -63,11 +63,10 @@ class BrandController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Brand  $brand
-     * @return \Illuminate\Http\Response
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('admin.brands.edit', compact('brand'));
     }
 
     /**
