@@ -20,10 +20,9 @@ class BrandSeeder extends Seeder
         $brands = config('dataSeeder.brands');
         foreach ($brands as $brand) {
             $new = new Brand();
-            $new->title = $brand['title'];
-            $new->slug = Str::slug($brand['title'], '-');
-            $new->image = $brand['image'];
-            $new->body = $brand['body'];
+            $new->name = $brand['name'];
+            $new->slug = Str::slug($brand['name'], '-');
+            $new->logo = $brand['logo'];
             $new->save();
         }
     }
