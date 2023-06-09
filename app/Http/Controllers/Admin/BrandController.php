@@ -34,11 +34,19 @@ class BrandController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreBrandRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(StoreBrandRequest $request)
     {
-        //
+        $data = $request->validated();
+        $slug = Str::slug($request->name, '-');
+        $data['slug'] = $slug;
+        if ($request->hasFile('logo')) {
+            $logo_path = Storage::put('uploads', $request->logo);
+            $data['logo'] = asset('storage/' . $logo_path);
+        }
+        $brand = Brand::create($data);
+
+        return redirect()->route('admin.brands.show', $brand->slug);
     }
 
     /**
