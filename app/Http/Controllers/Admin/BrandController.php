@@ -74,11 +74,21 @@ class BrandController extends Controller
      *
      * @param  \App\Http\Requests\UpdateBrandRequest  $request
      * @param  \App\Models\Brand  $brand
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateBrandRequest $request, Brand $brand)
     {
-        //
+        $data = $request->validated();
+        $slug = Str::slug($request->name, '-');
+        $data['slug'] = $slug;
+        if ($request->hasFile('logo')) {
+            if ($brand->logo) {
+                Storage::delete($brand->logo);
+            }
+            $logo_path = Storage::put('uploads', $request->logo);
+            $data['logo'] = asset('storage/' . $logo_path);
+        }
+
+        return redirect()->route('admin.brands.show', $brand->slug)->with('message', 'Il brand è stato aggiornato');
     }
 
     /**
