@@ -18,12 +18,12 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name', 100);
             $table->string('slug');
-            $table->string('cover_image');
-            $table->text('description');
+            $table->string('cover_image')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedDouble(6, 2);
-            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('texture_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('brand_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('texture_id')->nullable()->constrained()->onDelete('set null');
         });
     }
 
