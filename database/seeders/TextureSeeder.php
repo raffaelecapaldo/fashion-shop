@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class TexturesSeeder extends Seeder
+class TextureSeeder extends Seeder
 {
     /**
      * Run the database seeds.
