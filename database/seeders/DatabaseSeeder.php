@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             CategorySeeder::class,
             ColorSeeder::class,
-            TexturesSeeder::class,
+            TextureSeeder::class,
             ProductSeeder::class
         ]);
     }
