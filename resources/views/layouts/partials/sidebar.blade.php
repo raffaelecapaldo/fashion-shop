@@ -7,6 +7,7 @@
             <ul>
                 <li><a href="{{route('admin.products.index')}}">Home</a></li>
                 <li><a href="{{route('admin.brands.index')}}">Brands</a></li>
+                <li><a href="{{route('admin.categories.index')}}">Categories</a></li>
 
                 <li><form class="d-inline" method="POST" action="{{route('logout')}}">
                     @csrf
