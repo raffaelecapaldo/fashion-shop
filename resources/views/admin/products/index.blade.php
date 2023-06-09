@@ -18,7 +18,7 @@
         <tr>
             <th scope="row">{{$product->id}}</th>
             <td>{{$product->name}}</td>
-            <td><img class="img-thumbnail" src="{{$product->image}}" alt=""></td>
+            <td><img class="img-thumbnail" style="width:7rem;" src="{{'http://127.0.0.1:8000/storage/' . $product->cover_image}}" alt=""></td>
             <td>{{number_format($product->price, 2, ',')}}$</td>
           </tr>
         @empty
