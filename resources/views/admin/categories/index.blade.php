@@ -31,6 +31,9 @@
     </tbody>
   </table>
 </div>
+<div class="d-flex justify-content-end gap-2 me-2">
+    {{ $categories->links() }}
+</div>
 </div>
 
 @endsection
