@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])
         ->name('dashboard');
         Route::resource('brands', BrandController::class)->parameters(['brands' => 'brand:slug']);
+        Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
         Route::resource('products', ProductController::class)->parameters(['products' => 'product:slug']);
     });
 
