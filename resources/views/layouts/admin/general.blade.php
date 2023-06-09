@@ -22,6 +22,7 @@
 <body>
     @include('layouts.partials.header')
     <main>
+        @include('layouts.partials.sidebar')
         @yield('content')
     </main>
     @include('layouts.partials.header')

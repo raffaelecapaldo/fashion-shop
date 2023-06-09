@@ -1,4 +1,5 @@
 @use './partials/variables' as *;
+@import "~bootstrap/scss/bootstrap";
 
 $fa-font-path: "../fonts/webfonts" !default;
 
@@ -7,4 +8,107 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
-@import "~bootstrap/scss/bootstrap";
+.sidebar {
+    background-color: $primarycolor;
+    bottom: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 270px;
+    z-index: 1000;
+
+    .sidebar-logo {
+        img {
+            width: 100px;
+        }
+    }
+}
+
+.bg-sidebar {
+    background-color: $primarycolor;
+
+}
+
+.sidebar-logo {
+    img {
+        width: 70px;
+    }
+}
+.sidebar-inner {
+    height: 100%;
+}
+
+.sidebar-menu {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            &:hover {
+                background-color: $hovercolor;
+            }
+            a {
+                display: block;
+                padding-left: 10px;
+                padding: 8px 14px;
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: white;
+                &:hover {
+                    color: #acb6c4 !important;
+                }
+            }
+        }
+    }
+}
+
+.main-content {
+    padding-left: 270px;
+    min-height: 100dvh;
+    background-color: #f9fafb;
+}
+
+.preview {
+    width: 150px;
+}
+
+.myform {
+    border: 1px solid rgba(0, 0, 0, 0.0625) !important;
+    background-color: #ffffff !important;
+    padding: 3rem;
+}
+
+.button-view {
+    padding: 10px 50px;
+    background-color: $secondarycolor;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.a-form {
+    all: unset; // cosa è questa magia, godo
+    display: block;
+    padding-left: 10px;
+    padding: 8px 14px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: white;
+    &:hover {
+        color: #acb6c4 !important;
+    }
+
+
+}
+
+.category-badge {
+    background-color: $secondarycolor;
+    display: inline-block;
+    padding: 3px 15px;
+    border-radius: 6px;
+    h2 {
+        font-size: 25px;
+        margin:4px;
+        color:white;
+    }
+}

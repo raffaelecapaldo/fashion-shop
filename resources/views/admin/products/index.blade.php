@@ -2,6 +2,7 @@
 @section('title', 'Product List')
 
 @section('content')
+<div class="main-content">
 <div class="table-responsive">
 <table class="table">
     <thead>
@@ -18,7 +19,7 @@
             <th scope="row">{{$product->id}}</th>
             <td>{{$product->name}}</td>
             <td><img class="img-thumbnail" src="{{$product->image}}" alt=""></td>
-            <td>{{$product->price}}</td>
+            <td>{{number_format($product->price, 2, ',')}}$</td>
           </tr>
         @empty
 
@@ -26,5 +27,6 @@
 
     </tbody>
   </table>
+</div>
 </div>
 @endsection
