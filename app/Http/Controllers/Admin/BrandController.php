@@ -19,7 +19,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::all();
-        return view('admin.posts.index', compact('brands'));
+        return view('admin.brands.index', compact('brands'));
     }
 
     /**
