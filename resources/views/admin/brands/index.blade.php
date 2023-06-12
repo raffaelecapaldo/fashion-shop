@@ -9,6 +9,11 @@
                 <tr>
                     <th scope="col" colspan="5" class="fs-3 text-center">Lista dei nostri brands</th>
                 </tr>
+                <tr>
+                    <th colspan="5" class="fs-3 text-center">
+                        <a class="btn btn-primary text-white" href="{{ route('admin.brands.create') }}">Crea nuovo brand</a>
+                    </th>
+                </tr>
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
@@ -26,9 +31,18 @@
                         </td>
                         <td>{{ $brand->created_at }}</td>
                         <td>
-                            <a href="{{ route('admin.brands.show', $brand->slug) }}">Show</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
+                            <a href="{{ route('admin.brands.show', $brand->slug) }}" class="btn btn-primary text-white">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="{{ route('admin.brands.edit', $brand->slug) }}" class="btn btn-warning text-white">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <form action="{{ route('admin.brands.destroy', $brand->slug) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type='submit' class="delete-button btn btn-danger text-white"
+                                    data-item-title="{{ $brand->name }}"> <i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @empty
@@ -41,6 +55,7 @@
     <div class="d-flex justify-content-end gap-2 me-2">
         {{ $brands->links() }}
     </div>
+    @include('partials.modal-delete')
 </div>
 
 @endsection
