@@ -4,9 +4,11 @@
 
 @section('content')
 <div class="main-content">
-    <div class="m-4 p-4">
-        <h1>{{ $brand->name }}</h1>
-        <img class="img-thumbnail" style="width:100px" src="{{ $brand->logo }}" alt="{{ $brand->name }}">
+    <div class="p-4">
+        <div class="d-flex gap-4 align-items-center">
+            <img class="img-thumbnail" style="width:100px" src="{{ $brand->logo }}" alt="{{ $brand->name }}">
+            <h1>{{ $brand->name }}</h1>
+        </div>
         @if (count($brand->products) > 0)
         <p>
             <h4>Prodotti appartenenti a questo brand:</h4>
