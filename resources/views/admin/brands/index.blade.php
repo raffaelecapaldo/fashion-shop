@@ -27,7 +27,7 @@
                         <td>{{ $brand->created_at }}</td>
                         <td>
                             <a href="{{ route('admin.brands.show', $brand->slug) }}">Show</a>
-                            <a href="">Edit</a>
+                            <a href="{{ route('admin.brands.edit', $brand->slug) }}">Edit</a>
                             <a href="">Delete</a>
                         </td>
                     </tr>

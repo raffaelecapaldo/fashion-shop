@@ -80,6 +80,7 @@ class BrandController extends Controller
         $data = $request->validated();
         $slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
+        $data['name'] = $request->name;
         if ($request->hasFile('logo')) {
             if ($brand->logo) {
                 Storage::delete($brand->logo);
@@ -87,7 +88,7 @@ class BrandController extends Controller
             $logo_path = Storage::put('uploads', $request->logo);
             $data['logo'] = asset('storage/' . $logo_path);
         }
-
+        $brand->update($data);
         return redirect()->route('admin.brands.show', $brand->slug)->with('message', 'Il brand è stato aggiornato');
     }
 
