@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="main-content">
-    <h1>Edit Project: {{ $brand->name }}</h1>
+    <h1>Edit Brand: {{ $brand->name }}</h1>
     <form action="{{ route('admin.brands.update', $brand->slug) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
