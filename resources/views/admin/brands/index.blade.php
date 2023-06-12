@@ -9,6 +9,11 @@
                 <tr>
                     <th scope="col" colspan="5" class="fs-3 text-center">Lista dei nostri brands</th>
                 </tr>
+                <tr>
+                    <th colspan="5" class="fs-3 text-center">
+                        <a class="btn btn-primary text-white" href="{{ route('admin.brands.create') }}">Crea nuovo brand</a>
+                    </th>
+                </tr>
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
