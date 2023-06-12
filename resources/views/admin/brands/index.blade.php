@@ -31,8 +31,12 @@
                         </td>
                         <td>{{ $brand->created_at }}</td>
                         <td>
-                            <a href="{{ route('admin.brands.show', $brand->slug) }}">Show</a>
-                            <a href="{{ route('admin.brands.edit', $brand->slug) }}">Edit</a>
+                            <a href="{{ route('admin.brands.show', $brand->slug) }}" class="btn btn-primary text-white">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="{{ route('admin.brands.edit', $brand->slug) }}" class="btn btn-warning text-white">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
                             <form action="{{ route('admin.brands.destroy', $brand->slug) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
