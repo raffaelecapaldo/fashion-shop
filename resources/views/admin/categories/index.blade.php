@@ -20,7 +20,9 @@
         @foreach ($categories as $category)
             <tr>
                 <th scope="row">{{ $category->id }}</th>
-                <td>{{ $category->name }}</td>
+                <td>
+                    <a href="{{ route('admin.categories.show', $category->slug) }}" class="text-decoration-none fw-semibold">{{$category->name}}</a>
+                </td>
                 <td>{{ $category->created_at }}</td>
                 <td>
                     <a href="">Edit</a>
