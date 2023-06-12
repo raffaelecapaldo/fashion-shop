@@ -33,7 +33,12 @@
                         <td>
                             <a href="{{ route('admin.brands.show', $brand->slug) }}">Show</a>
                             <a href="{{ route('admin.brands.edit', $brand->slug) }}">Edit</a>
-                            <a href="">Delete</a>
+                            <form action="{{ route('admin.brands.destroy', $brand->slug) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type='submit' class="delete-button btn btn-danger text-white"
+                                    data-item-title="{{ $brand->name }}"> <i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @empty
@@ -46,6 +51,7 @@
     <div class="d-flex justify-content-end gap-2 me-2">
         {{ $brands->links() }}
     </div>
+    @include('partials.modal-delete')
 </div>
 
 @endsection
