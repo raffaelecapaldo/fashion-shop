@@ -1,5 +1,5 @@
 @extends('layouts.admin.general')
-@section('title', 'Edit brand')
+@section('title', 'Create new brand')
 
 @section('content')
 <div class="main-content">

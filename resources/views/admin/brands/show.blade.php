@@ -1,6 +1,6 @@
 
 @extends('layouts.admin.general')
-@section('title', 'Brands List')
+@section('title', 'Show brand')
 
 @section('content')
 <div class="main-content">
