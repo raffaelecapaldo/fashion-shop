@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\BrandController;
+use App\Http\Controllers\Api\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ use App\Http\Controllers\Api\BrandController;
 
 Route::get("/brands", [BrandController::class, 'index']);
 Route::get("/brands/{slug}", [BrandController::class, 'show']);
+Route::get("/products", [ProductController::class, 'index']);
+Route::get("/products/{slug}", [ProductController::class, 'show']);
