@@ -16,10 +16,17 @@ class BrandController extends Controller
     {
         $brands = Brand::paginate(5);
 
-        return response()->json([
-            "success" => true,
-            "results" => $brands
-        ]);
+        if($brands){
+            return response()->json([
+                "success" => true,
+                "results" => $brands
+            ]);
+        }else{
+            return response()->json([
+                "success" => false,
+                "results" => "Brands not found!"
+            ]);
+        }
     }
 
     /**
@@ -34,8 +41,7 @@ class BrandController extends Controller
                 "success" => true,
                 "results" => $brand
             ]);
-        }
-        else{
+        }else{
             return response()->json([
                 "success" => false,
                 "results" => "Brand not found!"
