@@ -21,4 +21,18 @@ class BrandController extends Controller
             "results" => $brands
         ]);
     }
+
+    /**
+     * Return a json response with the specified brand (if exists in the local db).
+    */
+    public function show($slug)
+    {
+        //return the first element with the same slug (without first() rreturn an array)
+        $brand = Brand::where('slug',$slug)->first();
+
+        return response()->json([
+            "success" => true,
+            "results" => $brand
+        ]);
+    }
 }
