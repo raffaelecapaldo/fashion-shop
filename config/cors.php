@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('APP_FRONTEND_URL'),'http://127.0.0.1:3000'],
+    'allowed_origins' => [env('APP_FRONTEND_URL','www.default.it')],
 
     'allowed_origins_patterns' => [],
 
