@@ -29,10 +29,17 @@ class BrandController extends Controller
     {
         //return the first element with the same slug (without first() rreturn an array)
         $brand = Brand::where('slug',$slug)->first();
-
-        return response()->json([
-            "success" => true,
-            "results" => $brand
-        ]);
+        if($brand){
+            return response()->json([
+                "success" => true,
+                "results" => $brand
+            ]);
+        }
+        else{
+            return response()->json([
+                "success" => false,
+                "results" => "Brand not found!"
+            ]);
+        }
     }
 }
