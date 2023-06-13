@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //Eager: return also the brand and category data
+        //Eager loading: return also the brand and category data
         $products = Product::with("brand","category")->paginate(5);
 
         if($products){
@@ -30,5 +30,23 @@ class ProductController extends Controller
         }
     }
 
-
+    /**
+     * Return a json response with the specified product (if exists in the local db).
+    */
+    public function show($slug)
+    {
+        //return the first element with the same slug (without first() rreturn an array)
+        $product = Product::with("brand","category")->where('slug',$slug)->first();
+        if($product){
+            return response()->json([
+                "success" => true,
+                "results" => $product
+            ]);
+        }else{
+            return response()->json([
+                "success" => false,
+                "results" => "Product not found!"
+            ]);
+        }
+    }
 }
